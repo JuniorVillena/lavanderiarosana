@@ -1,0 +1,16 @@
+.banner {
+    background: url('../img/banner.jpg') no-repeat center;
+    background-size: cover;
+    height: 400px;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h1 {
+    font-size: 3em;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,603 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E8F6F3;
+    font-size: 16px; 
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4DB6AC;
+    color: white;
+    padding: 10px 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.header-logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 50px; /* Ajusta el tamaño según sea necesario */
+    width: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: white;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: #4DB6AC;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative; 
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem; 
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #4DB6AC;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 100;
+    min-width: 150px;
+    text-align: left;
+}
+
+nav ul li:hover .dropdown {
+    display: block; 
+}
+
+nav ul li .dropdown li {
+    margin: 0;
+}
+
+nav ul li .dropdown li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li .dropdown li a:hover {
+    background-color: #00796B;
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem; 
+    }
+
+    nav ul li .dropdown {
+        position: static;
+        min-width: 100%;
+        padding: 0;
+    }
+
+    nav ul li .dropdown li a {
+        font-size: 0.9rem; 
+        padding: 8px;
+    }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 0.8rem;
+    }
+
+    nav ul li .dropdown li a {
+        font-size: 0.8rem; 
+        padding: 6px;
+    }
+
+    body {
+        font-size: 14px; 
+    }
+}
+
+/* Banner */
+.banner {
+    background: url('../img/banner.jpg') no-repeat center;
+    background-size: cover;
+    height: 400px;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h1 {
+    font-size: 3em;
+    color: #FFFFFF;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Servicios */
+.services {
+    padding: 20px;
+    text-align: center;
+    background-color: #E8F6F3;
+    margin: 20px 0;
+}
+
+.service-item {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+}
+
+.service-item i {
+    font-size: 50px;
+    color: #4DB6AC;
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    color: #4DB6AC;
+}
+
+
+.testimonials {
+    padding: 40px;
+    background-color: #E8F6F3;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.testimonial-slider {
+    display: flex;
+    transition: transform 1s ease;
+    width: 100%;
+    animation: slideTestimonial 18s linear infinite;
+}
+
+.testimonial-item {
+    flex: 0 0 30%;
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #4DB6AC;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-item blockquote {
+    margin: 0;
+    font-style: italic;
+    font-size: 16px;
+    color: #333;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-item cite {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #4DB6AC;
+    text-align: right;
+}
+
+@keyframes slideTestimonial {
+    0% {
+        transform: translateX(0);
+    }
+    33.33% {
+        transform: translateX(-33.33%);
+    }
+    66.66% {
+        transform: translateX(-66.66%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.payment-methods {
+    text-align: center;
+    margin: 50px 0;
+    padding: 30px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.payment-methods h2 {
+    color: #4DB6AC;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.payment-methods p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.payment-icon {
+    width: auto;
+    height: 60px;
+}
+
+/* FAQ */
+.faq {
+    padding: 40px 20px;
+    background-color: #F2F8F6;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #4DB6AC;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+}
+
+.faq-question {
+    background-color: #4DB6AC;
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question:hover {
+    background-color: #00796B;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: #E8F6F3;
+    border-radius: 0 0 8px 8px;
+    font-size: 1em;
+    color: #333;
+}
+
+.faq-question i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.open i {
+    transform: rotate(180deg);
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+    opacity: 1;
+    animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Ubicación */
+.ubicacion {
+    padding: 40px;
+    background-color: #F4F4F4;
+    text-align: center;
+}
+
+.ubicacion h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #4DB6AC;
+}
+
+.ubicacion p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.ubicacion address {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.ubicacion-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.mapa {
+    flex: 1;
+    min-width: 300px;
+}
+
+.horarios {
+    flex: 1;
+    min-width: 250px;
+    background-color: #E8F6F3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.horarios h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #4DB6AC;
+}
+
+.horarios p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #333;
+}
+
+
+@media (max-width: 768px) {
+    .ubicacion {
+        width: 90%;
+        max-width: 500px;
+        font-size: 0.9em;
+    }
+
+    .ubicacion h2 {
+        font-size: 1.2em;
+    }
+}
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-media a {
+    margin: 0 10px; 
+    font-size: 40px; 
+    color: #4DB6AC;
+    text-decoration: none; 
+}
+/* WhatsApp Chat */
+.whatsapp-chat a {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-chat a:hover {
+    animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 1024px) {
+    .banner {
+        height: 300px;
+    }
+
+    .banner h1 {
+        font-size: 2em;
+    }
+
+    .service-item {
+        width: 45%;
+        margin: 10px auto;
+    }
+
+    .testimonial-item {
+        flex: 0 0 90%;
+        margin: 15px auto;
+    }
+
+    .ubicacion-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .whatsapp-chat a {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        text-align: center;
+    }
+
+    .service-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .testimonial-item {
+        flex: 0 0 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 1.5em;
+    }
+
+    .faq-question {
+        font-size: 1em;
+    }
+
+    .payment-icons img {
+        height: 40px;
+    }
+
+    .whatsapp-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+}
+
+footer {
+    background-color: rgba(77, 182, 172, 0.8);
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    animation: slideInUp 1s forwards;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

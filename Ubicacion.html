@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - Lavandería ROSANA</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/ubicacion.css">
+    <script src="js/ubicacion.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-logo-title"></div>
+        <img src="img/logo.png" alt="Logo Lavandería ROSANA" class="logo">
+        <h1>Lavandería ROSANA</h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li>
+                    <a href="#">Precios</a>
+                    <ul class="dropdown">
+                        <li><a href="PreciosHotel.html">Hoteles</a></li>
+                        <li><a href="PreciosPersona.html">Personas</a></li>
+                    </ul>
+                </li>
+                <li><a href="Ubicacion.html">Ubicación</a></li>
+                <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="ubicacion">
+            <h2>Ubicación</h2>
+            <p>Encuéntranos en una ubicación accesible y conveniente para nuestros clientes.</p>
+            <address>
+                <strong>Lavandería ROSANA</strong><br>
+                Trujillo<br>
+                <a href="tel:+51977367550">Teléfono: +51 977 367 550</a><br>
+                <a href="mailto:lavanderiarosana@gmail.com">Correo: lavanderiarosana@gmail.com</a>
+            </address>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.577734512651!2d-79.027832!3d-8.1125917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d830846d2a1%3A0xc86feb159d5cc2a9!2sCasa%20Urquiaga!5e0!3m2!1ses-419!2spe!4v1630446871860!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <section class="consulta">
+            <h3>Consulta Rápida</h3>
+            <form id="consulta-form" onsubmit="return mostrarMensaje(event)">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <label for="celular">Celular:</label>
+                <input type="tel" id="celular" name="celular" placeholder="Tu número de celular" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Escribe tu consulta..." required></textarea>
+
+                <button type="submit">Enviar Consulta</button>
+            </form>
+            <div id="mensaje-enviado" style="display:none; color: green; font-size: 1.2em; text-align: center; margin-top: 20px;">
+                Consulta enviada
+            </div>
+        </section>
+    </main>
+
+    <div class="whatsapp-chat">
+        <a href="https://wa.me/51977367550?text=Hola,%20necesito%20más%20información" target="_blank">
+            <img src="img/whatsapp.jpg" alt="WhatsApp" class="whatsapp-icon">
+            <span class="whatsapp-text">¿Necesitas ayuda?</span>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Lavandería Rosana. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
